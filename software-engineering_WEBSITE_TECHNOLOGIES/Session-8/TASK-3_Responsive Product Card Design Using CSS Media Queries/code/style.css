@@ -1,0 +1,79 @@
+/* Default product card styles */
+.product-card {
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h2 {
+  font-size: 24px;
+}
+
+.product-card p {
+  font-size: 16px;
+}
+
+.product-card button {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+/* Breakpoint 1: Mobile */
+@media only screen and (max-width: 600px) {
+  .product-card {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .product-card h2 {
+    font-size: 20px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
+}
+
+/* Breakpoint 2: Tablet and smaller screens */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .product-card {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .product-card h2 {
+    font-size: 22px;
+  }
+
+  .product-card p {
+    font-size: 15px;
+  }
+}
+
+/* Breakpoint 3: Desktop and medium-large screens */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .product-card {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .product-card h2 {
+    font-size: 24px;
+  }
+
+  .product-card p {
+    font-size: 16px;
+  }
+}
