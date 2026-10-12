@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git and GitHub Basics</title>
+  </head>
+  <body>
+    <h1>Git and GitHub Basics</h1>
+
+    <ol>
+      <li>
+        <h2>Git Commands and Their Uses</h2>
+        <ul>
+          <li>
+            <strong>Initialize a repository:</strong>
+            <code>git init</code>
+          </li>
+          <li>
+            <strong>Stage all files:</strong>
+            <code>git add .</code>
+          </li>
+          <li>
+            <strong>Commit with a message:</strong>
+            <code>git commit -m "Initial commit"</code>
+          </li>
+          <li>
+            <strong>Push to a remote repository:</strong>
+            <code>git push origin main</code>
+          </li>
+          <li>
+            <strong>Pull the latest changes:</strong>
+            <code>git pull origin main</code>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2>Difference Between git fetch and git pull</h2>
+        <p>
+          <strong>git fetch:</strong> Downloads new commits and references from
+          the remote repository without merging them into the current branch.
+        </p>
+        <p>
+          <strong>git pull:</strong> Downloads remote changes and integrates
+          them into the current branch, usually by merging or rebasing.
+        </p>
+      </li>
+
+      <li>
+        <h2>Create a GitHub Repository and Push a Text File</h2>
+        <p>
+          <strong>Step 1:</strong> Sign in to GitHub and create a new repository
+          named web-design-practice.
+        </p>
+        <p>
+          <strong>Step 2:</strong> Create a text file named hello.txt on your
+          computer.
+        </p>
+        <p>
+          <strong>Step 3:</strong> Open Command Prompt or the terminal in your
+          project folder.
+        </p>
+
+        <h3>Commands</h3>
+        <pre>
+git init
+git add hello.txt
+git commit -m "Add hello text file"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/web-design-practice.git
+git push -u origin main
+            </pre
+        >
+
+        <p>
+          Replace YOUR-USERNAME with your actual GitHub username. If the
+          repository already has a remote named origin, update it with git
+          remote set-url origin YOUR-REPOSITORY-URL.
+        </p>
+
+        <p>
+          <strong>Repository link:</strong>
+          https://github.com/YOUR-USERNAME/web-design-practice
+        </p>
+        <p>
+          Replace the placeholder with your real username and share the link
+          after pushing the file successfully.
+        </p>
+      </li>
+
+      <li>
+        <h2>Difference Between a Fork and a Pull Request</h2>
+        <p>
+          <strong>Fork:</strong> Creates your own copy of another user's
+          repository under your GitHub account.
+        </p>
+        <p>
+          <strong>Pull Request:</strong> Proposes changes from one branch or
+          repository to another so they can be reviewed and merged.
+        </p>
+      </li>
+
+      <li>
+        <h2>Create a Branch, Commit, and Merge into Main</h2>
+        <p><strong>Step 1:</strong> Switch to the main branch and update it.</p>
+        <pre>
+git switch main
+git pull origin main
+            </pre
+        >
+
+        <p><strong>Step 2:</strong> Create and switch to feature-test.</p>
+        <pre>
+git switch -c feature-test
+            </pre
+        >
+
+        <p>
+          <strong>Step 3:</strong> Create a file named feature.txt and add some
+          text to it.
+        </p>
+
+        <p><strong>Step 4:</strong> Stage and commit the file.</p>
+        <pre>
+git add feature.txt
+git commit -m "Add feature test file"
+            </pre
+        >
+
+        <p>
+          <strong>Step 5:</strong> Switch back to main and merge the branch.
+        </p>
+        <pre>
+git switch main
+git merge feature-test
+            </pre
+        >
+
+        <p><strong>Step 6:</strong> Push the updated main branch to GitHub.</p>
+        <pre>
+git push origin main
+            </pre
+        >
+      </li>
+    </ol>
+  </body>
+</html>

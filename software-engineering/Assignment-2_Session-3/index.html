@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking and Internet Basics</title>
+  </head>
+  <body>
+    <h1>Networking and Internet Basics</h1>
+
+    <ol>
+      <li>
+        <h2>Full Forms and Uses of Network Protocols</h2>
+        <ul>
+          <li>
+            <strong>HTTP (Hypertext Transfer Protocol):</strong>
+            Used to transfer web pages and other resources between a browser and
+            a web server.
+          </li>
+          <li>
+            <strong>HTTPS (Hypertext Transfer Protocol Secure):</strong>
+            Transfers web data securely using encryption through TLS.
+          </li>
+          <li>
+            <strong>FTP (File Transfer Protocol):</strong>
+            Used to transfer files between computers over a network.
+          </li>
+          <li>
+            <strong>SMTP (Simple Mail Transfer Protocol):</strong>
+            Used to send and relay email messages between mail clients and mail
+            servers.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2>Difference Between IPv4 and IPv6</h2>
+        <p>
+          <strong>IPv4:</strong> Uses 32-bit addresses, such as 192.168.1.1, and
+          supports approximately 4.3 billion unique addresses.
+        </p>
+        <p>
+          <strong>IPv6:</strong> Uses 128-bit addresses, such as 2001:db8::1,
+          and provides a vastly larger address space.
+        </p>
+      </li>
+
+      <li>
+        <h2>Find the IP Address of google.com Using nslookup</h2>
+        <p>Open Command Prompt on Windows and enter the following command:</p>
+        <p><strong>nslookup google.com</strong></p>
+        <p>
+          The command displays the DNS server used and one or more IP addresses
+          returned for google.com.
+        </p>
+        <p>
+          <strong>IP Address:</strong> Write the actual IPv4 address shown under
+          the answer section of your command output.
+        </p>
+        <p>
+          Note: The returned address may vary depending on your DNS server,
+          location, and time. I cannot run this command on your Windows system
+          directly, so you should record the result from your own computer.
+        </p>
+      </li>
+
+      <li>
+        <h2>Meanings of HTTP Status Codes</h2>
+        <ul>
+          <li><strong>200 OK:</strong> The request was successful.</li>
+          <li>
+            <strong>301 Moved Permanently:</strong> The resource has permanently
+            moved to a new URL.
+          </li>
+          <li>
+            <strong>404 Not Found:</strong> The requested resource could not be
+            found.
+          </li>
+          <li>
+            <strong>500 Internal Server Error:</strong> The server encountered
+            an unexpected problem.
+          </li>
+          <li>
+            <strong>403 Forbidden:</strong> The server understood the request
+            but refuses to allow access.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2>DNS Hierarchy Using www.google.com</h2>
+        <ul>
+          <li>
+            <strong>Root (.) :</strong>
+            The top level of the DNS hierarchy, which directs queries toward the
+            appropriate TLD servers.
+          </li>
+          <li>
+            <strong>TLD (.com):</strong>
+            The top-level domain that identifies the domain category or
+            namespace.
+          </li>
+          <li>
+            <strong>Domain (google):</strong>
+            The registered domain name within the .com namespace.
+          </li>
+          <li>
+            <strong>Subdomain (www):</strong>
+            A name beneath google.com, commonly used for the website.
+          </li>
+        </ul>
+
+        <p>
+          <strong>DNS hierarchy:</strong>
+          Root (.) &rarr; .com &rarr; google.com &rarr; www.google.com
+        </p>
+      </li>
+    </ol>
+  </body>
+</html>
