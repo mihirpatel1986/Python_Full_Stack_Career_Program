@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Links Preview</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 16px;
+      font-family: Arial, sans-serif;
+      background: #f3f5f9;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 28px;
+    }
+
+    .form-card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: 2px solid #6478f5;
+      border-color: transparent;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3730a3;
+    }
+
+    #message {
+      margin-top: 14px;
+      color: #b91c1c;
+      text-align: center;
+    }
+
+    .preview-section {
+      margin-top: 35px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .preview-card {
+      padding: 22px 16px;
+      border-radius: 14px;
+      background: white;
+      border-top: 4px solid #4f46e5;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+      min-width: 0;
+    }
+
+    .preview-card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .preview-card p {
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .preview-card a {
+      display: block;
+      margin-top: 14px;
+      padding: 10px;
+      border-radius: 7px;
+      background: #eef2ff;
+      color: #3730a3;
+      text-align: center;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .preview-card a:hover {
+      background: #dbeafe;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #64748b;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 650px) {
+      .preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .form-card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 20px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>My Music Links</h1>
+    <p class="subtitle">
+      Add your favorite music profiles in one place.
+    </p>
+
+    <form id="musicLinksForm" class="form-card">
+      <div class="form-group">
+        <label for="spotify">Spotify Profile URL</label>
+        <input
+          type="url"
+          id="spotify"
+          name="spotify"
+          placeholder="https://open.spotify.com/..."
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="youtube">YouTube Music URL</label>
+        <input
+          type="url"
+          id="youtube"
+          name="youtube"
+          placeholder="https://music.youtube.com/..."
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="apple">Apple Music Profile URL</label>
+        <input
+          type="url"
+          id="apple"
+          name="apple"
+          placeholder="https://music.apple.com/..."
+        >
+      </div>
+
+      <button type="submit">Preview Music Links</button>
+      <p id="message" role="alert" aria-live="polite"></p>
+    </form>
+
+    <section class="preview-section">
+      <h2>Link Preview Cards</h2>
+
+      <div id="previewCards" class="preview-grid">
+        <p class="empty-state">
+          Your submitted music links will appear here.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const musicLinksForm =
+      document.getElementById("musicLinksForm");
+
+    const previewCards =
+      document.getElementById("previewCards");
+
+    const message =
+      document.getElementById("message");
+
+    const platforms = [
+      {
+        id: "spotify",
+        name: "Spotify",
+        description: "Listen and explore on Spotify.",
+        hosts: ["spotify.com"]
+      },
+      {
+        id: "youtube",
+        name: "YouTube Music",
+        description: "Discover music on YouTube Music.",
+        hosts: ["music.youtube.com"]
+      },
+      {
+        id: "apple",
+        name: "Apple Music",
+        description: "Explore music on Apple Music.",
+        hosts: ["music.apple.com"]
+      }
+    ];
+
+    function isAllowedUrl(value, allowedHosts) {
+      try {
+        const url = new URL(value);
+
+        return (
+          url.protocol === "https:" &&
+          allowedHosts.some(host =>
+            url.hostname === host ||
+            url.hostname.endsWith("." + host)
+          )
+        );
+      } catch {
+        return false;
+      }
+    }
+
+    musicLinksForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      message.textContent = "";
+
+      const submittedLinks = platforms
+        .map(platform => ({
+          ...platform,
+          url: document.getElementById(platform.id).value.trim()
+        }))
+        .filter(platform => platform.url !== "");
+
+      if (submittedLinks.length === 0) {
+        message.textContent =
+          "Please enter at least one music link.";
+        return;
+      }
+
+      const invalidLink = submittedLinks.find(platform =>
+        !isAllowedUrl(platform.url, platform.hosts)
+      );
+
+      if (invalidLink) {
+        message.textContent =
+          "Please enter a valid HTTPS " +
+          invalidLink.name + " URL.";
+        return;
+      }
+
+      previewCards.replaceChildren();
+
+      submittedLinks.forEach(platform => {
+        const card = document.createElement("article");
+        card.className = "preview-card";
+
+        const title = document.createElement("h3");
+        title.textContent = platform.name;
+
+        const description = document.createElement("p");
+        description.textContent = platform.description;
+
+        const link = document.createElement("a");
+        link.href = platform.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Open " + platform.name;
+
+        card.append(title, description, link);
+        previewCards.appendChild(card);
+      });
+
+      message.style.color = "#15803d";
+      message.textContent =
+        "Your music link previews are ready!";
+    });
+  </script>
+</body>
+</html>

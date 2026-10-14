@@ -1,0 +1,53 @@
+.social-form {
+  max-width: 450px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.social-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 6px;
+}
+
+.social-input {
+  position: relative;
+  width: 100%;
+}
+
+.social-input i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #555;
+  pointer-events: none;
+}
+
+.social-input input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px 13px 46px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.social-input input:focus {
+  border-color: #e23744;
+  box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.12);
+}
+
+.social-input input::placeholder {
+  color: #999;
+}
