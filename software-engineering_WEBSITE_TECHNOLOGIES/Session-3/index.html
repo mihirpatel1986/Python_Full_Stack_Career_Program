@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Review & Food Order Forms</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f1f3f6;
+        color: #222;
+        padding: 30px 15px;
+      }
+
+      .container {
+        max-width: 750px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2874f0;
+        margin-bottom: 30px;
+      }
+
+      .form-card {
+        background: #fff;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-card h2 {
+        margin-bottom: 10px;
+        color: #2874f0;
+      }
+
+      .food-form h2 {
+        color: #e23744;
+      }
+
+      .description {
+        color: #666;
+        margin-bottom: 22px;
+        line-height: 1.5;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        font-family: inherit;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #2874f0;
+        box-shadow: 0 0 4px rgba(40, 116, 240, 0.25);
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      input:disabled {
+        background: #e9ecef;
+        color: #666;
+        cursor: not-allowed;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 6px;
+        background: #2874f0;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1558c0;
+      }
+
+      .food-form button {
+        background: #e23744;
+      }
+
+      .food-form button:hover {
+        background: #bd1e2b;
+      }
+
+      .note {
+        margin-top: 15px;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 15px 10px;
+        }
+
+        .form-card {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Online Shopping & Food Ordering</h1>
+
+      <!-- 1. Flipkart-style Product Review Form -->
+      <section class="form-card">
+        <h2>Product Review Form</h2>
+
+        <p class="description">
+          Share your product experience and help other customers make better
+          purchasing decisions.
+        </p>
+
+        <!-- POST sends form data in the request body.
+                 action="#" is a demo; use a backend URL in production. -->
+        <form id="reviewForm" action="#" method="POST">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="rating">Product Rating:</label>
+
+            <select id="rating" name="rating" required>
+              <option value="" disabled selected>Select a rating</option>
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Fair</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Very Good</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="review">Review Message:</label>
+
+            <textarea
+              id="review"
+              name="review"
+              placeholder="Write your product review (minimum 20 characters)"
+              minlength="20"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Submit Review</button>
+
+          <p class="note">
+            All fields are required. The review must contain at least 20
+            characters.
+          </p>
+        </form>
+      </section>
+
+      <!-- 2. Zomato-style Food Order Form -->
+      <section class="form-card food-form">
+        <h2>Food Order Form</h2>
+
+        <p class="description">
+          Select your favorite food, specify the quantity, and provide your
+          delivery instructions.
+        </p>
+
+        <form id="foodForm" action="#" method="POST">
+          <div class="form-group">
+            <label for="orderUsername">Your Name:</label>
+            <input
+              type="text"
+              id="orderUsername"
+              name="username"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="foodItem">Select Food Item:</label>
+
+            <select id="foodItem" name="foodItem" required>
+              <option value="" disabled selected>Choose a food item</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Burger">Burger</option>
+              <option value="Pasta">Pasta</option>
+              <option value="Biryani">Biryani</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              step="1"
+              placeholder="Enter quantity"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="instructions"> Delivery Instructions: </label>
+
+            <textarea
+              id="instructions"
+              name="instructions"
+              placeholder="E.g., Ring the doorbell on arrival"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="orderId">Order ID:</label>
+
+            <!-- Disabled because this ID is fixed and must not
+                         be edited by the user. Disabled inputs are
+                         excluded from submitted form data. -->
+            <input
+              type="text"
+              id="orderId"
+              name="orderId"
+              value="ORD12345"
+              disabled
+            />
+          </div>
+
+          <button type="submit">Place Food Order</button>
+
+          <p class="note">
+            Please complete all fields before placing your order.
+          </p>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
