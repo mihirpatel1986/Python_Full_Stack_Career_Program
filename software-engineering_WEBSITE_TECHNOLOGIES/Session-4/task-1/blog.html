@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple semantic HTML blog post layout.">
+  <title>My Simple Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #263238;
+      background: #f4f7f9;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+      background: #245b78;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      padding: 0.8rem 1rem;
+      text-align: center;
+      background: #183f54;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 0.8rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      width: min(900px, 92%);
+      margin: 2rem auto;
+    }
+
+    article {
+      padding: 2rem;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    article h2 {
+      margin-top: 0;
+      color: #245b78;
+    }
+
+    .post-meta {
+      color: #607d8b;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 1.2rem;
+      text-align: center;
+      color: white;
+      background: #183f54;
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        margin: 0 0.4rem;
+      }
+
+      article {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Simple Blog</h1>
+    <p>Ideas, stories, and inspiration</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#explore">Explore</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main id="home">
+    <article>
+      <header>
+        <h2>Welcome to My First Blog Post</h2>
+        <p class="post-meta">
+          Published on <time datetime="2026-10-19">October 19, 2026</time>
+          · By Alex
+        </p>
+      </header>
+
+      <p>
+        Welcome to my blog! This is a place to share thoughts, experiences,
+        and useful ideas with readers.
+      </p>
+
+      <p>
+        Semantic HTML makes a webpage easier to understand and maintain.
+        The <code>&lt;header&gt;</code> introduces the page or article,
+        <code>&lt;nav&gt;</code> groups navigation links,
+        <code>&lt;article&gt;</code> contains independent post content,
+        and <code>&lt;footer&gt;</code> provides closing information.
+      </p>
+
+      <p>
+        Thanks for stopping by. Check back soon for more posts and updates!
+      </p>
+    </article>
+  </main>
+
+  <footer id="about">
+    <p>&copy; 2026 My Simple Blog. All rights reserved.</p>
+  </footer>
+</body>
+</html>
