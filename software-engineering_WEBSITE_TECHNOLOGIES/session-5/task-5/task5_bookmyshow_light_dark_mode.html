@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5 - BookMyShow Light Dark Mode</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f4f6f9; color: #222; }
+    main { max-width: 800px; margin: auto; background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    h1 { color: #263f73; }
+    .note { color: #596579; }
+
+    body { transition: background-color .25s, color .25s; }
+    body.dark-mode { background: #141821; color: #f4f6fb; }
+    body.dark-mode main { background: #222936; color: #f4f6fb; }
+    body.dark-mode h1 { color: #9dbbff; }
+    .theme-button { border: 0; padding: 10px 16px; border-radius: 8px; background: #263f73; color: white; cursor: pointer; }
+
+  </style>
+</head>
+<body>
+<main>
+  <h1>Task 5 - BookMyShow Light Dark Mode</h1>
+
+  <p>Click the button to switch between light and dark themes.</p>
+  <button class="theme-button" id="theme-toggle" type="button" aria-pressed="false">Switch to Dark Mode</button>
+
+</main>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", function () {
+    const isDark = document.body.classList.toggle("dark-mode");
+    themeToggle.textContent = isDark ? "Switch to Light Mode" : "Switch to Dark Mode";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+  });
+</script>
+
+</body>
+</html>
