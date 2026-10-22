@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 3: Responsive Product Card Design</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937; background: #f3f6fa;
+  }
+  .page { max-width: 1100px; margin: auto; }
+  header { margin-bottom: 24px; }
+  header h1 { margin: 0 0 8px; font-size: clamp(1.5rem, 3vw, 2rem); color: #172554; }
+  header p { margin: 0; color: #64748b; }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .product-card {
+    overflow: hidden; background: #fff; border-radius: 14px;
+    border: 1px solid #e2e8f0; box-shadow: 0 5px 18px rgba(15, 23, 42, .07);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(15, 23, 42, .12); }
+  .product-image {
+    height: 210px; position: relative; display: grid; place-items: center;
+    font-size: 5rem; background: linear-gradient(135deg, #e0f2fe, #f1f5f9);
+  }
+  .tag {
+    position: absolute; top: 12px; left: 12px; font-size: .75rem;
+    background: #dbeafe; color: #1d4ed8; padding: 5px 9px; border-radius: 999px;
+  }
+  .product-info { padding: 18px; }
+  .category { margin: 0 0 5px; color: #64748b; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+  .product-info h2 { margin: 0 0 8px; font-size: 1.1rem; }
+  .rating { margin: 0 0 12px; color: #b45309; font-size: .9rem; }
+  .price { margin: 0 0 16px; color: #15803d; font-size: 1.35rem; font-weight: 700; }
+  button {
+    width: 100%; border: 0; border-radius: 8px; padding: 12px 14px;
+    background: #2874f0; color: white; font-size: .95rem; font-weight: 700; cursor: pointer;
+  }
+  button:hover { background: #1d5fc4; }
+  @media (max-width: 800px) {
+    body { padding: 20px; }
+    .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    body { padding: 12px; }
+    .products { grid-template-columns: 1fr; }
+    .product-image { height: 180px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1>Task 3: Responsive Product Card Design</h1>
+    <p>Product cards with clean styling, subtle shadows, badges, and clear pricing.</p>
+  </header>
+  <section class="products" aria-label="Product cards">
+
+      <article class="product-card">
+        <div class="product-image" aria-label="Smartphone image placeholder">📱<span class="tag">Best seller</span></div>
+        <div class="product-info">
+          <p class="category">Best seller</p>
+          <h2>Smartphone</h2>
+          <p class="rating">4.6 ★ (2,140)</p>
+          <p class="price">₹12,999</p>
+          <button type="button">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image" aria-label="Everyday Laptop image placeholder">💻<span class="tag">Popular</span></div>
+        <div class="product-info">
+          <p class="category">Popular</p>
+          <h2>Everyday Laptop</h2>
+          <p class="rating">4.5 ★ (1,020)</p>
+          <p class="price">₹39,999</p>
+          <button type="button">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image" aria-label="Digital Camera image placeholder">📷<span class="tag">New</span></div>
+        <div class="product-info">
+          <p class="category">New</p>
+          <h2>Digital Camera</h2>
+          <p class="rating">4.2 ★ (310)</p>
+          <p class="price">₹8,499</p>
+          <button type="button">Add to Cart</button>
+        </div>
+      </article>
+  </section>
+</main>
+</body>
+</html>
