@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3: Fixed WhatsApp Chat Notification</title>
+  <style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; }
+.long-content { min-height: 1100px; padding-top: 30px; line-height: 3; }
+.whatsapp-badge {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  margin: 8px;
+  border-radius: 30px;
+  background: #25d366;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 14px #0003;
+}
+.count { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: white; color: #168a45; }
+  </style>
+</head>
+<body>
+  <header><h1>Task 3: Fixed WhatsApp Chat Notification</h1></header>
+  <main>
+<main>
+  <h1>Fixed WhatsApp Chat Badge</h1>
+  <p>Scroll this page to see that the chat badge stays at the bottom-right corner.</p>
+  <div class="long-content">Scroll demonstration<br><br>Keep scrolling to test the fixed badge.<br><br>More content<br><br>More content<br><br>More content<br><br>End of demo.</div>
+</main>
+<a class="whatsapp-badge" href="#top" aria-label="WhatsApp chat, 2 unread messages">
+  <span>☎ WhatsApp Chat</span><span class="count">2</span>
+</a>
+  </main>
+</body>
+</html>

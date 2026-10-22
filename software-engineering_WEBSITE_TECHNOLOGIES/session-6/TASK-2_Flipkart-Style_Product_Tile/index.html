@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2: Flipkart-Style Product Tile</title>
+  <style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; background: #f5f5f5; }
+.product-tile { width: 250px; margin: 24px auto; padding: 16px; text-align: center; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.product-tile img { display: block; width: 100%; height: 170px; object-fit: contain; }
+.product-name { display: block; font-size: 18px; margin: 12px 0; }
+.price { display: inline-block; padding: 6px 10px; margin: 0; color: #176b2c; background: #eaf7ed; border-radius: 5px; font-weight: bold; }
+.product-tile.hide-price .price { display: none; } /* Hide price when class is added */
+  </style>
+</head>
+<body>
+  <header><h1>Task 2: Flipkart-Style Product Tile</h1></header>
+  <main>
+<!-- Add the class hide-price to product-tile to hide the price. -->
+<article class="product-tile">
+  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Wireless headphones">
+  <h2 class="product-name">Wireless Headphones</h2>
+  <p class="price">₹1,499</p>
+</article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1: Zomato-Style Restaurant Card</title>
+  <style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; background: #f5f5f5; }
+.restaurant-card {
+  max-width: 360px;
+  margin: 24px auto;          /* Outside spacing */
+  padding: 16px;              /* Inside spacing */
+  border: 1px solid #ddd;     /* Visible border */
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px #00000014;
+}
+.restaurant-card img { display: block; width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+.restaurant-card h2 { margin: 12px 0 6px; }
+.cuisine { margin: 0 0 12px; color: #777; }
+.rating { display: inline-block; padding: 5px 9px; background: #267e3e; color: white; border-radius: 5px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h1>Task 1: Zomato-Style Restaurant Card</h1></header>
+  <main>
+<section class="restaurant-card">
+  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Restaurant interior">
+  <h2>Spice Garden</h2>
+  <p class="cuisine">North Indian · Chinese · Casual Dining</p>
+  <span class="rating">★ 4.3 / 5</span>
+</section>
+  </main>
+</body>
+</html>
