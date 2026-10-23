@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3: Flipkart-Style Product Showcase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root { --brand:#6c4cf1; --brand-dark:#5035c7; --ink:#20243a; --soft:#f5f4ff; }
+    body { font-family:Arial,sans-serif; color:var(--ink); background:#f7f8fc; }
+    .demo-wrap { max-width:1100px; margin:32px auto; padding:24px; background:#fff; border-radius:16px; box-shadow:0 5px 24px #18203a12; }
+    .brand-text { color:var(--brand); }
+    .btn-brand { background:var(--brand); color:#fff; border-color:var(--brand); }
+    .btn-brand:hover { background:var(--brand-dark); color:#fff; border-color:var(--brand-dark); }
+    .section-title { font-weight:800; letter-spacing:-.03em; }
+    
+    .product-card{border:1px solid #edf0f5;border-radius:12px;overflow:hidden;transition:box-shadow .2s}
+    .product-card:hover{box-shadow:0 8px 22px #18203a1a}
+    .product-card img{height:150px;object-fit:contain;padding:12px;background:#fff}
+
+    @media(max-width:576px) { .demo-wrap { margin:12px; padding:16px; } }
+  </style>
+</head>
+<body>
+
+  <main class="container demo-wrap">
+    <p class="text-uppercase small fw-bold brand-text mb-1">Today's picks</p>
+    <h1 class="section-title h2 mb-4">Popular Products</h1>
+    <div class="row g-4">
+      <div class="col-6 col-md-3"><article class="card h-100 product-card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Headphones">
+        <div class="card-body"><h2 class="h6 fw-bold">Wireless Headphones</h2><p class="fw-bold mb-2">₹1,499</p><a href="#buy-headphones" class="btn btn-brand btn-sm w-100">Buy Now</a></div>
+      </article></div>
+      <div class="col-6 col-md-3"><article class="card h-100 product-card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Wrist watch">
+        <div class="card-body"><h2 class="h6 fw-bold">Classic Watch</h2><p class="fw-bold mb-2">₹2,299</p><a href="#buy-watch" class="btn btn-brand btn-sm w-100">Buy Now</a></div>
+      </article></div>
+      <div class="col-6 col-md-3"><article class="card h-100 product-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Red running shoe">
+        <div class="card-body"><h2 class="h6 fw-bold">Running Shoes</h2><p class="fw-bold mb-2">₹1,899</p><a href="#buy-shoes" class="btn btn-brand btn-sm w-100">Buy Now</a></div>
+      </article></div>
+      <div class="col-6 col-md-3"><article class="card h-100 product-card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Smartphone">
+        <div class="card-body"><h2 class="h6 fw-bold">Smartphone</h2><p class="fw-bold mb-2">₹12,999</p><a href="#buy-phone" class="btn btn-brand btn-sm w-100">Buy Now</a></div>
+      </article></div>
+    </div>
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

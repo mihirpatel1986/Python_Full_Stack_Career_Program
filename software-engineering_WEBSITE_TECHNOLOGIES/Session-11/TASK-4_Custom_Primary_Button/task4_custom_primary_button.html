@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4: Custom Bootstrap Primary Button</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .demo-wrap { max-width: 900px; margin: 40px auto; padding: 24px; border-radius: 14px; }
+    .demo-title { color: #174ea6; }
+    
+    .btn-primary { background-color: #7c3aed; border-color: #7c3aed; }
+    .btn-primary:hover, .btn-primary:focus { background-color: #5b21b6; border-color: #5b21b6; }
+    .btn-primary:active { background-color: #4c1d95 !important; border-color: #4c1d95 !important; }
+
+    @media(max-width:576px) { .demo-wrap { margin: 18px 10px; padding: 16px; } }
+  </style>
+</head>
+<body class="bg-light">
+  <main class="container demo-wrap bg-white text-dark shadow-sm">
+    <h1 class="h3 fw-bold demo-title mb-4">Task 4: Custom Bootstrap Primary Button</h1>
+    
+    <div class="card p-4 border-0 shadow-sm">
+      <h2 class="h4 fw-bold">Book Your Movie Ticket</h2>
+      <p class="text-secondary">The primary button uses a custom purple shade instead of Bootstrap's default blue.</p>
+      <div><button type="button" class="btn btn-primary">Book Ticket</button></div>
+    </div>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
