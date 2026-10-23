@@ -1,0 +1,14 @@
+body {
+  background: #f4f6fa;
+  font-family: Arial, sans-serif;
+  color: #263238;
+}
+.test-card {
+  height: 100%;
+  padding: 24px;
+  border: 1px solid #dce3ec;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .06);
+}
+.test-card h2 { color: #164a8a; }
