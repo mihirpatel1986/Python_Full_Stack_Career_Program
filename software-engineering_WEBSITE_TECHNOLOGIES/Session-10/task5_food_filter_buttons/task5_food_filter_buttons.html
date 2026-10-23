@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5: Food Delivery Filter Buttons</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background:#f6f8fc; color:#263238; font-family:Arial,sans-serif; }
+    .demo { max-width:900px; margin:40px auto; padding:24px; background:#fff; border:1px solid #e3e8ef; border-radius:12px; box-shadow:0 4px 14px #0000000d; }
+    h1 { color:#174ea6; font-weight:700; margin-bottom:22px; }
+    @media(max-width:576px) { .demo { margin:18px 10px; padding:16px; } }
+  </style>
+</head>
+<body>
+  <main class="demo">
+    <h1 class="h3">Task 5: Food Delivery Filter Buttons</h1>
+    
+    <style>
+      .filter-buttons .btn{border-radius:22px;margin:4px;min-width:90px}
+      .filter-buttons .btn.active{background:#dc3545;border-color:#dc3545;color:#fff}
+    </style>
+    <div class="filter-buttons text-center" role="group" aria-label="Filter food categories">
+      <button type="button" class="btn btn-outline-danger active" aria-pressed="true">All</button>
+      <button type="button" class="btn btn-outline-danger" aria-pressed="false">Veg</button>
+      <button type="button" class="btn btn-outline-danger" aria-pressed="false">Non-Veg</button>
+      <button type="button" class="btn btn-outline-danger" aria-pressed="false">Desserts</button>
+    </div>
+    <p class="text-secondary text-center mt-3 mb-0">Click a filter to highlight the selected category.</p>
+    
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    document.querySelectorAll(".filter-buttons .btn").forEach(function(button) {
+      button.addEventListener("click", function() {
+        document.querySelectorAll(".filter-buttons .btn").forEach(function(item) {
+          item.classList.remove("active");
+          item.setAttribute("aria-pressed", "false");
+        });
+        this.classList.add("active");
+        this.setAttribute("aria-pressed", "true");
+      });
+    });
+  </script>
+    
+</body>
+</html>
